@@ -1,0 +1,34 @@
+Satu Sekolah Aplikasi
+
+User:
+-Admin
+-Guru
+-Siswa
+
+Semua punya settings profile
+
+Admin:
+-CRUD User
+-CRUD Guru
+-CRUD Siswa
+-CRUD Mapel
+-CRUD Mapel Guru
+-CRUD Jadwal
+-CRUD Kelas
+
+Guru:
+-Melihat Jadwal Mingguan
+-Generate QR Absensi di dashboard dan tampil qr codenya (perlihatkan langsung / download [tidak perlu fitur pengiriman qr code karena sudah di luar aplikasi]
+-Lihat kelas apa saja yang di ajari
+-Lihat Rekap Absensi melalui card di halaman kelas yg di ajari
+-Melihat dashboard yang menampilkan jadwal hari ini (info mapel, kelas, status), sesi pelajaran sekarang (sesuai waktu), tiap sesi pelajaran memiliki qr code unik, kalau tidak ada sesi pelajaran yang aktif maka menampilkan sesi berikutnya
+-Halaman kelas memiliki tombol sesi pelajaran sekarang pada sebuah card kelas jika kelas itu punya sesi pelajaran pada hari itu (status: belum, aktif, selesai) 
+-Halaman sesi pelajaran sekarang yang di nyatakan "Selesai" akan kick guru dan redirect dengan pesan “Sesi telah selesai. Data absensi dapat dilihat melalui rekap absensi.”
+-Manual input kehadiran
+
+Siswa:
+-Melihat Jadwal Mingguan
+-Melihat dashboard yang berisi sesi pelajaran sekarang/terdekat (mapel, guru, kelas, jam, status [belum, sudah, telat]) + tombol scan QR dengan pesan "Belum waktunya absensi" atau "Absensi sudah tercatat"
+-Validasi Lokasi & Waktu
+-Melihat Kelas (guru wali, siswa, dan guru pengajar beserta mapelnya [tidak perlu waktu karena ada di jadwal mingguan])
+-Melihat riwayat absensi
