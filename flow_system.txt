@@ -25,6 +25,7 @@ Guru:
 -Halaman kelas memiliki tombol sesi pelajaran sekarang pada sebuah card kelas jika kelas itu punya sesi pelajaran pada hari itu (status: belum, aktif, selesai) 
 -Halaman sesi pelajaran sekarang yang di nyatakan "Selesai" akan kick guru dan redirect dengan pesan “Sesi telah selesai. Data absensi dapat dilihat melalui rekap absensi.”
 -Manual input kehadiran
+-Halaman profile (ganti sandi, pfp
 
 Siswa:
 -Melihat Jadwal Mingguan
