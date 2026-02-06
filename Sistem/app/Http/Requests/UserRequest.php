@@ -7,7 +7,6 @@ use Illuminate\Foundation\Http\FormRequest;
 
 class UserRequest extends FormRequest
 {
-
     public $validator;
 
     /**
@@ -43,7 +42,7 @@ class UserRequest extends FormRequest
             'name' => 'required|max:100',
             'photo' => 'nullable|file|image',
             'email' => 'required|email|unique:m_user',
-            'password' => 'required|min:6',
+            'password' => 'required|min:8',
             'phone_number' => 'numeric',
             // 'm_user_roles_id' => 'required',
         ];
