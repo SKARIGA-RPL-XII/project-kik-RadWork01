@@ -2,39 +2,38 @@
 
 namespace App\Http\Controllers\Api;
 
+use App\Helpers\AuthHelper;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\AuthRequest;
-use Auth;
+use Illuminate\Support\Facades\Auth;
 
 class AuthController extends Controller
 {
+    protected $authHelper;
+
+    public function __construct()
+    {
+        $this->authHelper = new AuthHelper();
+    }
+
     public function login(AuthRequest $request)
     {
-        if (isset($request->validator) && $request->validator->fails()) {
-            return response()->failed($request->validator->errors(), 422);
-        }
+        try {
+            $credentials = $request->only('email', 'password');
 
-        $credentials = $request->only('email', 'password');
+            $token = $this->authHelper->login($credentials);
 
-        if (!$token = Auth::attempt($credentials)) {
             return response()->json([
-                'message' => 'Email atau password salah'
-            ], 401);
-        }
+                'access_token' => $token,
+                'token_type' => 'Bearer',
+                'expires_in' => config('jwt.ttl') * 60,
+            ]);
 
-        $user = Auth::user();
-
-        if (!$user->status) {
+        } catch (\Exception $e) {
             return response()->json([
-                'message' => 'Akun tidak aktif'
-            ], 403);
+                'message' => $e->getMessage()
+            ], $e->getCode() ?: 400);
         }
-
-        return response()->json([
-            'token' => $token,
-            'type' => 'Bearer',
-            'user' => $user->load('role')
-        ]);
     }
 
     public function me()

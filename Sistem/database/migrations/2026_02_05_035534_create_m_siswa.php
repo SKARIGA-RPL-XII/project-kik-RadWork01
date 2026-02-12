@@ -14,7 +14,8 @@ return new class extends Migration
         Schema::create('m_siswa', function (Blueprint $table) {
             $table->uuid('id')->primary();
             $table->uuid('m_user_id');
-            $table->string('nis', 20);
+            $table->uuid('m_kelas_id');
+            $table->string('nis', 20)->unique();
             $table->string('nama', 100);
             $table->enum('jenis_kelamin', ['m', 'f']);
             $table->date('tanggal_lahir');
@@ -26,6 +27,7 @@ return new class extends Migration
             $table->softDeletes();
 
             $table->index('m_user_id');
+            $table->index('m_kelas_id');
         });
     }
 

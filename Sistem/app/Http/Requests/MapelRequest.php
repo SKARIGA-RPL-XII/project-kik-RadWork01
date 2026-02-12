@@ -5,9 +5,8 @@ namespace App\Http\Requests;
 use Illuminate\Contracts\Validation\Validator;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Http\Exceptions\HttpResponseException;
-use Illuminate\Validation\Rule;
 
-class UserRequest extends FormRequest
+class MapelRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -26,7 +25,7 @@ class UserRequest extends FormRequest
             ], 422)
         );
     }
-    
+
     /**
      * Get the validation rules that apply to the request.
      *
@@ -44,27 +43,14 @@ class UserRequest extends FormRequest
     private function createRules(): array
     {
         return [
-            'email' => 'required|email|unique:m_user,email',
-            'password' => 'required|string|min:8|regex:/^(?=.*[A-Z])(?=.*[a-z])(?=.*\d).+$/',
-            'm_role_id' => 'required|exists:m_role,id',
-            'status' => 'required|boolean'
+            'nama_mapel' => 'required',
         ];
     }
 
     private function updateRules(): array
     {
         return [
-            'email' => [
-            'required',
-            'email',
-            Rule::unique('m_user', 'email')
-                ->ignore($this->route('id'))
-            ],
-            'password' => 'string|min:8|regex:/^(?=.*[A-Z])(?=.*[a-z])(?=.*\d).+$/',
-            'm_role_id' => 'required|exists:m_role,id',
-            'status' => 'required|boolean'
+            'nama_mapel' => 'required',
         ];
     }
-
-
 }
