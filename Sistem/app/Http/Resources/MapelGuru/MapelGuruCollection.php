@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Http\Resources;
+namespace App\Http\Resources\MapelGuru;
 
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\ResourceCollection;
 
-class GuruCollection extends ResourceCollection
+class MapelGuruCollection extends ResourceCollection
 {
     /**
      * Transform the resource collection into an array.
@@ -14,7 +14,7 @@ class GuruCollection extends ResourceCollection
      */
     public function toArray(Request $request): array
     {
-       return [
+        return [
             'list' => $this->collection,
             'meta' => [
                 'total' => $this->total(),

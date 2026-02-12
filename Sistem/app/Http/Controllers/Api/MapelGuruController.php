@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Api;
 
 use App\Helpers\MapelGuruHelper;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\MapelGuruRequest;
-use App\Http\Resources\MapelGuruCollection;
-use App\Http\Resources\MapelGuruResource;
+use App\Http\Resources\MapelGuru\MapelGuruCollection;
+use App\Http\Resources\MapelGuru\MapelGuruResource;
 use Illuminate\Http\Request;
 
 class MapelGuruController extends Controller

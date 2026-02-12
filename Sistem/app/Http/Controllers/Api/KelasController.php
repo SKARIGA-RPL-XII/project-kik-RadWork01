@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Api;
 
 use App\Helpers\KelasHelper;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\KelasRequest;
-use App\Http\Resources\KelasCollection;
-use App\Http\Resources\KelasResource;
+use App\Http\Resources\Kelas\KelasCollection;
+use App\Http\Resources\Kelas\KelasResource;
 use Illuminate\Http\Request;
 
 class KelasController extends Controller

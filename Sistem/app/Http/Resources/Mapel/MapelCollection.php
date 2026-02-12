@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Http\Resources;
+namespace App\Http\Resources\Mapel;
 
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\ResourceCollection;
 
-class MapelGuruCollection extends ResourceCollection
+class MapelCollection extends ResourceCollection
 {
     /**
      * Transform the resource collection into an array.

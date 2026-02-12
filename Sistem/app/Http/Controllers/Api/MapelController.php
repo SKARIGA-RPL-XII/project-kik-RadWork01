@@ -4,10 +4,9 @@ namespace App\Http\Controllers\Api;
 
 use App\Helpers\MapelHelper;
 use App\Http\Controllers\Controller;
-use App\Http\Requests\GuruRequest;
 use App\Http\Requests\MapelRequest;
-use App\Http\Resources\MapelCollection;
-use App\Http\Resources\MapelResource;
+use App\Http\Resources\Mapel\MapelCollection;
+use App\Http\Resources\Mapel\MapelResource;
 use Illuminate\Http\Request;
 
 class MapelController extends Controller

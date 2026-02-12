@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Http\Resources;
+namespace App\Http\Resources\MapelGuru;
 
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;
 
-class KelasResource extends JsonResource
+class MapelGuruResource extends JsonResource
 {
     /**
      * Transform the resource into an array.
@@ -17,7 +17,8 @@ class KelasResource extends JsonResource
         $data['id'] = $this->id ?? null;
         $data['m_guru_id'] = $this->m_guru_id ?? null;
         $data['guru'] = $this->guru->nama ?? null;
-        $data['nama_kelas'] = $this->nama_kelas ?? null;
+        $data['m_mapel_id'] = $this->m_mapel_id ?? null;
+        $data['mapel'] = $this->mapel->nama_mapel ?? null;
 
         return $data;
     }

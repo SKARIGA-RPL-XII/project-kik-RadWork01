@@ -25,6 +25,11 @@ class KelasModel extends Model
         return $this->belongsTo(GuruModel::class, 'm_guru_id');
     }
 
+    public function siswas()
+    {
+        return $this->hasMany(SiswaModel::class, 'm_siswa_id');
+    }
+
     public function getAll(array $filter, int $itemPerPage = 0, string $sort = '')
     {
         $mapels = $this->query();

@@ -6,8 +6,8 @@ use App\Helpers\GuruHelper;
 use App\Helpers\UserHelper;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\GuruRequest;
-use App\Http\Resources\GuruCollection;
-use App\Http\Resources\GuruResource;
+use App\Http\Resources\Guru\GuruCollection;
+use App\Http\Resources\Guru\GuruResource;
 use Illuminate\Http\Request;
 
 class GuruController extends Controller
